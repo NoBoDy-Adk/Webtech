@@ -2,33 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aadhithya VM | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    section { display: none; }
-    section.active { display: block; }
-  </style>
+  <link rel="stylesheet" href="style.css"> 
 </head>
+
 <body>
   <header>
     <div class="logo">Aadhithya VM</div>
     <nav>
-      <a href="#" onclick="showSection('hero')">Home</a>
-      <a href="#" onclick="showSection('education')">Education</a>
-      <a href="#" onclick="showSection('skills')">Skills</a>
-      <a href="#" onclick="showSection('projects')">Projects</a>
-      <a href="#" onclick="showSection('experience')">Experience</a>
-      <a href="#" onclick="showSection('contact')">Contact</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="hero" class="active">
+  <section class="hero">
     <div class="hero-text">
       <h1>Hi There,<br>I'm <span>Aadhithya</span></h1>
       <p>Currently Focusing in IoT , System Software & Web Tech</p>
-      <a href="#" class="button" onclick="showSection('education')">View Portfolio</a>
+      <a href="#education" class="button">View Portfolio</a>
     </div>
     <div class="hero-img">
       <img src="aadhi.jpg" alt="Aadhi">
@@ -64,8 +60,8 @@
       <p>CNN + RNN video detector with Flask UI, mesoscopic features, and temporal sequence analysis.</p>
     </div>
     <div class="card">
-      <h3>Ocean Freight Management System</h3>
-      <p>Built a secure logistics platform using Node.js, Express, and MySQL for supplier management, quote requests, and real-time shipment tracking. Integrated dynamic pricing, port scheduling, and secure authentication with bcrypt.</p>
+      <h3>Ocean Frieght Management System</h3>
+      <p>Built a secure logistics platform using Node.js, Express, and MySQL for supplier management, quote requests, and real-time shipment tracking.Integrated dynamic pricing, port scheduling, and secure authentication with bcrypt.</p>
     </div>
   </section>
 
@@ -75,7 +71,7 @@
       <h3>Python Programmer</h3>
       <p><strong>Program:</strong> Infolynix</p>
       <p><strong>Duration:</strong> Jun 2025 – Jun 2025 · Hybrid</p>
-      <p>Completed technical training and mentorship in Python programming. Worked on data analysis using PowerBI and Excel.</p>
+      <p>Completed technical training and mentorship in Python programming.And worked on data analysis using powerbi and Excel</p>
     </div>
   </section>
 
@@ -86,22 +82,9 @@
       <p><strong>Phone:</strong> +91 9884418759</p>
       <div class="social-icons">
         <a href="https://github.com/NoBoDy-Adk"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/aadhithya-v-m"><i class="fab fa-linkedin"></i></a>
+        <a href="www.linkedin.com/in/aadhithya-v-m"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </section>
-
-  <script>
-    function showSection(id) {
-  
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    window.addEventListener('load', () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash) showSection(hash);
-    });
-  </script>
 </body>
 </html>
