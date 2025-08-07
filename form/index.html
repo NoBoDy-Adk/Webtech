@@ -3,45 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Community Event Registration</title>
+  <title>Event Registration</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="form-container">
-    <h2>Register for the Community Event</h2>
-    <p class="description">Please fill in your details to reserve your spot.</p>
-    
+
+  <div class="background-animate"></div>
+
+  <div class="container form-glass" id="formContainer">
+    <h1><span class="highlight">Event</span> Registration</h1>
+    <p class="subtext">Secure your spot now!</p>
     <form id="registrationForm" novalidate>
-      <div class="form-group">
-        <label for="name">Full Name*</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <div class="form-field">
+        <input type="text" id="name" placeholder=" " />
+        <label for="name">Full Name</label>
         <small id="nameError" class="error"></small>
       </div>
 
-      <div class="form-group">
-        <label for="email">Email Address*</label>
-        <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+      <div class="form-field">
+        <input type="email" id="email" placeholder=" " />
+        <label for="email">Email</label>
         <small id="emailError" class="error"></small>
       </div>
 
-      <div class="form-group">
-        <label for="phone">Phone Number*</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
+      <div class="form-field">
+        <input type="tel" id="phone" placeholder=" " />
+        <label for="phone">Phone</label>
         <small id="phoneError" class="error"></small>
       </div>
 
-      <div class="form-group">
-        <label for="age">Age*</label>
-        <input type="number" id="age" name="age" placeholder="18+" required min="18" />
+      <div class="form-field">
+        <input type="number" id="age" placeholder=" " />
+        <label for="age">Age</label>
         <small id="ageError" class="error"></small>
       </div>
 
-      <button type="submit">Submit Registration</button>
-      <p id="successMessage" class="success-msg"></p>
+      <button type="submit">Register</button>
     </form>
+  </div>
+
+  <div class="popup-overlay" id="successContainer">
+    <div class="popup-box">
+        <span class="close-icon">&times;</span>
+        <h2>Registration Successful!</h2>
+        <p>Thank you for registering. We look forward to seeing you at the event.</p>
+    </div>
   </div>
 
   <script src="assets.js"></script>
