@@ -1,0 +1,483 @@
+/* ===========================
+   Consolidated + Alignment-Fixed CSS
+   (Preserves original look; fixes alignment)
+   =========================== */
+
+/* === GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #111;
+  color: #f1f1f1;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b1b1b;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #aaa;
+}
+
+/* === PAGE / CONTAINERS === */
+.page-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-container {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 40px;
+  line-height: 1.8;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.home-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.home-container span {
+  color: #ccc;
+}
+
+/* === PRODUCTS GRID / CARDS ===
+   Keep the same look but center everything consistently
+*/
+.products-grid,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  align-items: start;
+  justify-items: center; /* important: center cards in their grid cells */
+  padding: 0 16px;
+}
+
+/* unified product card style (removed duplicates) */
+.product-card {
+  width: 100%;
+  max-width: 340px;           /* keeps consistent card width */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* center the image inside card and keep consistent size */
+.product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #111;
+  border-radius: 10px;
+  margin: 0 auto 15px auto; /* center & spacing */
+  padding: 10px;
+  display: block;
+}
+
+/* text elements */
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+.product-card p,
+.product-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.product-card .product-price,
+.product-price {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* add-to-cart button keeps original rounded look */
+.product-card button {
+  background: #f2f2f2;
+  color: #0d0d0d;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background: #ccc;
+}
+
+/* === QUANTITY / CONTROLS (centered) === */
+.quantity-controls,
+.qty-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* critical: center qty controls */
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.quantity-controls button,
+.qty-controls button {
+  background: #f2f2f2;
+  color: #0d0d0d;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls select,
+.qty-controls select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === CART / CART PAGE (alignment kept consistent) === */
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+}
+
+.cart-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #1a1a1a;
+  padding: 10px;
+  margin-right: 16px;
+}
+
+.cart-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.cart-details h3 {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.cart-details p {
+  color: #bbb;
+  margin-top: 4px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove-btn {
+  background: #ff5555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.remove-btn:hover {
+  background: #e63939;
+}
+
+.cart-total {
+  text-align: right;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* === PRODUCT DETAIL PAGE ===
+   Keep centered alignment and responsive two-column on wide screens.
+*/
+.product-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* layout: left image, right details on wide screens */
+.product-detail-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+/* left column: image centered within its column */
+.product-detail-left {
+  flex: 1 1 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 280px;
+}
+
+.product-detail-img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #1a1a1a;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  display: block;
+  margin: 0 auto;
+}
+
+/* right column: details */
+.product-detail-right {
+  flex: 1 1 420px;
+  min-width: 300px;
+}
+
+.product-detail-right h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.product-detail-right .price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #f1f1f1;
+  text-align: left;
+}
+
+.product-detail-right .rating {
+  font-size: 1.2rem;
+  color: gold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.product-detail-desc {
+  color: #ccc;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* quantity in details */
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* reviews centered under details block */
+.reviews {
+  list-style: none;
+  margin-top: 15px;
+  text-align: left;
+  padding-left: 0;
+}
+
+.reviews li {
+  margin: 8px 0;
+  color: #ddd;
+}
+
+/* back link centered on page bottom */
+.back-link {
+  display: block;
+  margin-top: 20px;
+  color: #a26bff;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* === CHECKOUT / FORMS (kept same style; fixed input contrast) === */
+.checkout-container {
+  max-width: 600px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.checkout-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-container label {
+  color: #ccc;
+  font-weight: 500;
+}
+
+.checkout-container input,
+.checkout-container textarea,
+.checkout-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+.checkout-container input:focus,
+.checkout-container textarea:focus,
+.checkout-container select:focus {
+  border-color: #ccc;
+}
+
+.checkout-container option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.checkout-btn {
+  background: #f2f2f2;
+  color: #111;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #ccc;
+  color: #000;
+  transform: scale(1.02);
+}
+
+/* === SMALL FIXES: ensure centered headings on product pages === */
+.product-card h3,
+.product-detail h2,
+.product-detail-right h2 {
+  text-align: center;
+}
+
+/* For product-detail-right (when displayed side-by-side) keep left alignment for description */
+.product-detail-right .price,
+.product-detail-right .rating,
+.product-detail-desc {
+  text-align: left;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .product-detail-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-detail-right {
+    text-align: center;
+  }
+
+  .product-detail-desc,
+  .product-detail-right .price,
+  .product-detail-right .rating {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-img { height: 150px; }
+  .product-detail-img { width: 200px; height: 200px; }
+  .product-card { padding: 16px; }
+  .product-card h3 { font-size: 1rem; }
+}
